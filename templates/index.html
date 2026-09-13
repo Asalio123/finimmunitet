@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>На твои первые деньги — и твою карту — уже <em>охотятся</em></h1>
+      <p class="hero-lead">Разборы реальных схем 2026 года, раздел «Стоп-дроп» и уроки в школах Азнакаевского района. Без лекций — только то, что работает.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ base }}/razbory/">Смотреть разборы</a>
+        <a class="btn btn-ghost" href="{{ base }}/stopdrop/">Что такое «дроп»</a>
+      </div>
+    </div>
+    <div class="chat-wrap">
+      <p class="chat-caption">Такое прилетает в личку. Распознаёшь за 30 секунд?</p>
+      <div class="chat" role="img" aria-label="Переписка с мошенником и разбор его флагов">
+        <div class="chat-top">
+          <div class="chat-avatar"><svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="chat-who"><b>Лёгкий заработок</b><span>online</span></div>
+        </div>
+        <div class="chat-body">
+          <div class="msg in m1">Привет! Заработок 5000 ₽ за 20 минут. Без вложений и опыта<time>14:01</time></div>
+          <div class="msg out m2">Это как?<time>14:01</time></div>
+          <div class="msg in m3">Просто получи перевод на карту и отправь дальше. 10% — твои<time>14:02</time></div>
+          <div class="msg out m4">Слишком просто для таких денег<time>14:02</time></div>
+          <div class="msg in m5">Только никому не рассказывай, это внутренняя схема<time>14:03</time></div>
+        </div>
+        <div class="chat-input"><span>Написать сообщение…</span><svg viewBox="0 0 24 24"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><i></i></div>
+      </div>
+      <div class="flags">
+        <span class="fhead">Что здесь не так:</span>
+        <span class="flag f1">Деньги просто и сразу — маркер ловушки</span>
+        <span class="flag f2">Переводы через твою карту — дроперство</span>
+        <span class="flag f3">«Никому не говори» — так прячут преступление</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="wrap section">
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num">30 сек</span>
+      <span class="stat-label">нужно, чтобы увидеть ловушку в сообщении</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">50+</span>
+      <span class="stat-label">школьников на первом уроке 10 сентября</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">08.10</span>
+      <span class="stat-label">до этой даты идёт Финдиктант — сдай в своём классе</span>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <h2>Что внутри</h2>
+  <div class="feature-grid">
+    <a class="feature-card tint-teal" href="{{ base }}/stopdrop/">
+      <div class="feature-head"><svg class="ic" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg><h3>Стоп-дроп</h3></div>
+      <p>Как подростков вербуют в «дропы», почему «просто отдать карту» — статья и что делать, если уже согласился.</p>
+      <span class="more">Открыть <svg class="ic" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    </a>
+    <a class="feature-card tint-gray" href="{{ base }}/razbory/">
+      <div class="feature-head"><svg class="ic" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><h3>Разборы схем</h3></div>
+      <p>Одна схема — одна карточка: механика, красные флаги, что делать. Фильтры: звонки, соцсети, подработка, карты.</p>
+      <span class="more">Смотреть все <svg class="ic" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    </a>
+    <a class="feature-card tint-navy" href="{{ site.vk_url }}" target="_blank" rel="noopener">
+      <div class="feature-head"><svg class="ic" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><h3>Разбор «на заказ»</h3></div>
+      <p>Прилетело подозрительное предложение? Кидай в сообщения группы VK — разберём бесплатно и анонимно.</p>
+      <span class="more"><span class="vk-badge">VK</span> Написать <svg class="ic" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="wrap section">
+  <h2>Как это работает</h2>
+  <ol class="steps">
+    <li class="step">
+      <b>Читаешь разбор за 30 секунд</b>
+      <p>Одна схема — одна карточка: механика, красные флаги, конкретные действия. Без лекций.</p>
+    </li>
+    <li class="step">
+      <b>Сдаёшь Финдиктант</b>
+      <p>8 сентября – 8 октября. 30 минут, анонимно — показывает реальный уровень. Повторный замер — в мае.</p>
+    </li>
+    <li class="step">
+      <b>Приходишь на урок в своей школе</b>
+      <p>Программа собирается из проваленных тем района по итогам диктанта — по тому, что бьёт именно по вам.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="wrap section">
+  <h2>Свежее</h2>
+  <div class="news-list">
+    {% for n in latest_news %}
+    <a class="news-item" href="{{ base }}/{{ n.slug }}/">
+      <time datetime="{{ n.date }}">{{ n.date_str }}</time>
+      <div>
+        <h3>{{ n.title }}</h3>
+        <p>{{ n.summary }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="rule">
+    <p class="kicker">Главное правило</p>
+    <p class="rule-big">Карта не покидает тебя. Никогда. Никому.</p>
+    <p>«Продай карту за 5000» — это не заработок, а статья. Схема разобрана в разделе <a href="{{ base }}/stopdrop/">Стоп-дроп →</a></p>
+  </div>
+</section>
+{% endblock %}

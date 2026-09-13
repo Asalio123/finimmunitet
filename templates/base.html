@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description or site.description }}">
+{% if site_url %}
+<link rel="canonical" href="{{ site_url }}{{ base }}/{{ page.slug if page.slug and page.slug != 'index' else '' }}">
+<meta property="og:url" content="{{ site_url }}{{ base }}/{{ page.slug if page.slug and page.slug != 'index' else '' }}">
+<meta property="og:image" content="{{ site_url }}{{ base }}/img/og.png">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{{ page.description or site.description }}">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ base }}/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ base }}/img/favicon-16.png">
+<link rel="apple-touch-icon" href="{{ base }}/img/apple-touch-icon.png">
+<link rel="stylesheet" href="{{ base }}/css/style.css">
+</head>
+<body>
+{% set nav = [
+  ('/', 'Главная', 'index'),
+  ('/stopdrop/', 'Стоп-дроп', 'stopdrop'),
+  ('/razbory/', 'Разборы', 'razbory'),
+  ('/about/', 'О проекте', 'about'),
+  ('/contacts/', 'Контакты', 'contacts')
+] %}
+{% set active = page.slug if page.slug else '' %}
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ base }}/">
+      <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#16243D"/><path d="M27 20.4c0 4.2-2.94 6.3-6.46 7.53a.85.85 0 0 1-.56-.01C16.46 26.7 13.5 24.6 13.5 20.4v-5.9a.85.85 0 0 1 .85-.85c1.7 0 3.8-1.01 5.26-2.29a.99.99 0 0 1 1.28 0c1.46 1.28 3.56 2.29 5.26 2.29.47 0 .85.38.85.85z" fill="none" stroke="#2FBF9F" stroke-width="2"/><path d="m15.8 18.4 2.4 2.4 4.6-4.6" fill="none" stroke="#2FBF9F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-burger" aria-label="Меню"><span></span></label>
+    <nav class="site-nav">
+      {% for href, label, slug in nav %}
+      <a href="{{ base }}{{ href }}" {% if slug == active %}class="is-active" aria-current="page"{% endif %}>{{ label }}</a>
+      {% endfor %}
+    </nav>
+    <a class="btn btn-primary header-cta" href="{{ site.vk_url }}" target="_blank" rel="noopener">Написать нам</a>
+  </div>
+</header>
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>{{ site.title }}</strong>
+      <p>Финансовая безопасность подростков Азнакаевского района и Татарстана.</p>
+    </div>
+    <div class="footer-links">
+      <a href="{{ site.vk_url }}" target="_blank" rel="noopener"><span class="vk-badge">VK</span> ВКонтакте</a>
+    </div>
+  </div>
+  <div class="wrap footer-meta">Обновлено {{ build_date }}</div>
+</footer>
+
+{% if metrika_id %}
+<!-- Яндекс.Метрика -->
+<script async src="https://mc.yandex.ru/metrika/tag.js"></script>
+<script>
+  ym({{ metrika_id }}, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:false });
+</script>
+<noscript><img src="https://mc.yandex.ru/watch/{{ metrika_id }}" style="position:absolute;left:-9999px" alt=""></noscript>
+{% endif %}
+<script src="{{ base }}/js/main.js" defer></script>
+</body>
+</html>

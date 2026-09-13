@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="wrap section">
+  <h1>{{ page.title }}</h1>
+  {{ content | safe }}
+
+  <div class="filter-bar" role="group" aria-label="Фильтр по каналам">
+    <button class="filter-btn is-active" data-filter="all">Все</button>
+    {% for t in tags %}
+    <button class="filter-btn" data-filter="{{ t }}">{{ t }}</button>
+    {% endfor %}
+  </div>
+
+  <div class="card-grid">
+    {% for c in cards %}
+    <a class="scheme-card" data-tag="{{ c.tag }}" href="{{ base }}/{{ c.slug }}/">
+      <span class="badge badge-{{ c.tag }}">{{ c.tag }}</span>
+      <h2>{{ c.title }}</h2>
+      <p>{{ c.summary }}</p>
+      <time datetime="{{ c.date }}">{{ c.date_str }}</time>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
